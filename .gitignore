@@ -19,13 +19,12 @@ image-dired/*
 elim/*
 doc/*
 elpa/*
-src/*
 themes/*
 url/*
 
 ## exported and encrypted files
 *gpg
-*el
+starter-kit*.el
 *elc
 *html
 *tex

@@ -9,7 +9,7 @@ Key Bindings.
 
 ** You know, like Readline.
 #+begin_src emacs-lisp 
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
+;; (global-set-key (kbd "C-M-h") 'backward-kill-word)
 #+end_src
 
 ** Align your code in a pretty way.
@@ -24,7 +24,7 @@ Key Bindings.
 
 ** Turn on the menu bar for exploring new modes
 #+begin_src emacs-lisp 
-(global-set-key [f1] 'menu-bar-mode)
+;; (global-set-key [f1] 'menu-bar-mode)
 #+end_src
 
 ** Font size
@@ -37,8 +37,8 @@ Key Bindings.
 #+begin_src emacs-lisp 
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "M-s") 'isearch-forward)
+(global-set-key (kbd "M-r") 'isearch-backward)
 #+end_src
 
 ** File finding
@@ -48,10 +48,10 @@ Key Bindings.
   (global-set-key (kbd "C-c y") 'bury-buffer)
   (global-set-key (kbd "C-c r") 'revert-buffer)
   (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
-  (global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
   (global-set-key (kbd "C-x f") 'recentf-ido-find-file)  
 #+end_src
-
+   
 ** Window switching. (C-x o goes to the next window)
 #+begin_src emacs-lisp 
 (windmove-default-keybindings) ;; Shift+direction
@@ -66,7 +66,7 @@ Key Bindings.
 
 ** If you want to be able to M-x without meta
 #+begin_src emacs-lisp 
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+;; (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 #+end_src
 
 ** Help should search more than just commands

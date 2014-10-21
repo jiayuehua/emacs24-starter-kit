@@ -1,5 +1,5 @@
 (starter-kit-load "misc-recommended")
-
+(require 'dired)
 (window-numbering-mode 1)
 
 ;; (add-to-list 'load-path "~/.emacs.d/el-get")
@@ -18,7 +18,7 @@
 (put 'dired-find-alternate-file 'disabled nil) ;;not replace dired buffer
 
 (global-set-key "\C-x\C-j" 'dired-jump) ; 通过 C-x C-j 跳转到当前目录的 Dired
-(require 'dired-x)            ;有些特殊的功能  ,! command on the fire
+;; (require 'dired-x)            ;有些特殊的功能  ,! command on the fire
 ;; (require 'w32-browser)
 ;; (eval-after-load "dired"
 ;; '(define-key dired-mode-map [f4] (lambda ()
@@ -62,7 +62,6 @@
 (global-set-key "\C-c\C-k" 'kill-region)
 
 
-;; (global-set-key "\C-c\C-k" 'kill-region)
 ;;(require 'csv-mode)			
 
 ;; don't understand
@@ -119,18 +118,18 @@
 ;; (add-hook 'after-init-hook 'session-initialize)
 
 
-(require 'browse-kill-ring)
+;; (require 'browse-kill-ring)
 (global-set-key [(control c)(k)] 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
 
 ;;hide region
-(require 'hide-region)
+;; (require 'hide-region)
 (global-set-key (kbd "C-c r") 'hide-region-hide)
 (global-set-key (kbd "C-c R") 'hide-region-unhide)
 
 ;; hide lines
-(require 'hide-lines)
+;; (require 'hide-lines)
 (global-set-key (kbd "C-c l") 'hide-lines)
 (global-set-key (kbd "C-c L") 'show-all-invisible)
 
@@ -239,7 +238,7 @@ occurence of CHAR."
 (setq user-full-name "jiayuehua")
 (setq user-mail-address "jiayuehua@gmail.com")
 
-(require 'ctypes)                       
+;;(require 'ctypes)                       
 (ctypes-auto-parse-mode 1)
 
 ;;----------------jia----------
@@ -270,14 +269,14 @@ occurence of CHAR."
   (align-regexp start end 
                 (concat "\\(\\s-*\\)" regexp) 1 1 t))
 
-;; (require 'highlight-symbol)
-;; (global-set-key [(f6)] 'highlight-symbol-at-point)
-;; (global-set-key [f3] 'highlight-symbol-next)
-;; (global-set-key [(shift f3)] 'highlight-symbol-prev)
-;; (global-set-key [(meta f3)] 'highlight-symbol-prev)
+
+(global-set-key [(f6)] 'highlight-symbol-at-point)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-prev)
 
 ;; windmove   ************************
-(require 'windmove) 
+;;(require 'windmove) 
 (windmove-default-keybindings)      
 
 ;; modified from windmove-do-window-select
@@ -398,7 +397,7 @@ occurence of CHAR."
 ;;(require 'ibuffer)                      
 ;;(global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(require 'tabbar)
+;;(require 'tabbar)
 
 ;; (setq tabbar-buffer-groups-function 'tabbar-buffer-ignore-groups) 
 ;; (defun tabbar-buffer-ignore-groups (buffer)

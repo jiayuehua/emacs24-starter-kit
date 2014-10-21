@@ -61,7 +61,7 @@ Key Bindings.
 
 ** Indentation help
 #+begin_src emacs-lisp 
-(global-set-key (kbd "C-x ^") 'join-line)
+(global-set-key (kbd "C-^") 'join-line)
 #+end_src
 
 ** If you want to be able to M-x without meta

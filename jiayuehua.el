@@ -2,7 +2,6 @@
 
 (window-numbering-mode 1)
 
-;; (add-to-list 'load-path "~/.emacs.d/emacs") 
 ;; (add-to-list 'load-path "~/.emacs.d/el-get")
 ;; (unless (require 'el-get nil 'noerror)
 ;;   (with-current-buffer
@@ -34,8 +33,8 @@
 ;; Recommended keybindings:
 (define-key dired-mode-map (kbd "C-s") 'dired-isearch-forward)
 (define-key dired-mode-map (kbd "C-r") 'dired-isearch-backward)
-(define-key dired-mode-map (kbd "ESC C-s") 'dired-isearch-forward-regexp)
-(define-key dired-mode-map (kbd "ESC C-r") 'dired-isearch-backward-regexp)
+(define-key dired-mode-map (kbd "M-s") 'dired-isearch-forward-regexp)
+(define-key dired-mode-map (kbd "M-r") 'dired-isearch-backward-regexp)
 (require 'dired-view)
 ;;To enable it by default,                
 ;;      (add-hook 'dired-mode-hook 'dired-view-minor-mode-on) 
@@ -92,6 +91,7 @@
  '(evil-auto-indent t)
  '(evil-shift-width 2)
  '(evil-want-C-u-scroll t)
+ '(gdb-many-windows t)
  '(org-agenda-files (quote ("~/d.org" "~/a.org" "~/c.org")))
  '(safe-local-variable-values (quote ((folded-file . t)))))
 (custom-set-faces
@@ -271,7 +271,7 @@ occurence of CHAR."
                 (concat "\\(\\s-*\\)" regexp) 1 1 t))
 
 ;; (require 'highlight-symbol)
-;; (global-set-key [(control f3)] 'highlight-symbol-at-point)
+;; (global-set-key [(f6)] 'highlight-symbol-at-point)
 ;; (global-set-key [f3] 'highlight-symbol-next)
 ;; (global-set-key [(shift f3)] 'highlight-symbol-prev)
 ;; (global-set-key [(meta f3)] 'highlight-symbol-prev)
@@ -380,7 +380,6 @@ occurence of CHAR."
 
 
 ;;(require 'gmail)
-
 ;;(setq dired-guess-shell-alist-user
 ;;(list
 ;;(list "\\.chm$" "xchm")
@@ -455,4 +454,19 @@ occurence of CHAR."
 ;; (diary)
 ;; (appt-activate 1)  
 
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
+;; (require 'smex) ; Not needed if you use package.el
+;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+;;                   ; when Smex is auto-initialized on its first run.
+;; (global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; ;; This is your old M-x.
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;; (require 'expand-region)
+;; (global-set-key (kbd "M-=") 'er/expand-region)

@@ -1,7 +1,7 @@
 (starter-kit-load "misc-recommended")
 (require 'dired)
 (window-numbering-mode 1)
-
+(global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 ;; (add-to-list 'load-path "~/.emacs.d/el-get")
 ;; (unless (require 'el-get nil 'noerror)
 ;;   (with-current-buffer
@@ -469,3 +469,4 @@ occurence of CHAR."
 ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 ;; (require 'expand-region)
 ;; (global-set-key (kbd "M-=") 'er/expand-region)
+

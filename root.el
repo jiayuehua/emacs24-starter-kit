@@ -1,5 +1,4 @@
 (starter-kit-load "misc-recommended")
- (setq magit-repo-dirs "~/XiaoQiang/")
 (require 'dired)
 (window-numbering-mode 1)
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
@@ -14,12 +13,12 @@
 ;; (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 ;; (el-get 'sync)
 
-(setq dired-recursive-copies t)         ; ¿ÉÒÔµÝ¹éµÄ½øÐÐ¿½±´
-(setq dired-recursive-deletes t)        ; ¿ÉÒÔµÝ¹éµÄÉ¾³ýÄ¿Â¼
+(setq dired-recursive-copies t)         ; ���Եݹ�Ľ��п���
+(setq dired-recursive-deletes t)        ; ���Եݹ��ɾ��Ŀ¼
 (put 'dired-find-alternate-file 'disabled nil) ;;not replace dired buffer
 
-;; (global-set-key "\C-x\C-j" 'dired-jump) ; Í¨¹ý C-x C-j Ìø×ªµ½µ±Ç°Ä¿Â¼µÄ Dired
-;; (require 'dired-x)            ;ÓÐÐ©ÌØÊâµÄ¹¦ÄÜ  ,! command on the fire
+(global-set-key "\C-x\C-j" 'dired-jump) ; ͨ�� C-x C-j ��ת����ǰĿ¼�� Dired
+;; (require 'dired-x)            ;��Щ����Ĺ���  ,! command on the fire
 ;; (require 'w32-browser)
 ;; (eval-after-load "dired"
 ;; '(define-key dired-mode-map [f4] (lambda ()
@@ -123,8 +122,7 @@
 (global-set-key [(control c)(k)] 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
-;; magit
-(global-set-key (kbd "C-x g") 'magit-status)
+
 ;;hide region
 ;; (require 'hide-region)
 (global-set-key (kbd "C-c r") 'hide-region-hide)
@@ -247,7 +245,7 @@ occurence of CHAR."
 (ansi-color-for-comint-mode-on)
 (xterm-mouse-mode 1)
 
-;;×Ô¶¯²¹È«À¨ºÅ
+;;�Զ���ȫ����
 (defun my-c-mode-auto-pair ()
   (interactive)
   (make-local-variable 'skeleton-pair-alist)
@@ -332,7 +330,7 @@ occurence of CHAR."
 
 ;; Recommended keybindings:
 ;; (autoload 'nc "nc" "Emuliate MS-DOG file shell" t)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 (require 'sunrise-commander)
 (require 'sunrise-x-buttons)
 
@@ -393,7 +391,7 @@ occurence of CHAR."
 ;;(list "\\.html$" "w3m")
 ;;(list "\\.mpg$" "gmplayer")
 ;;)
-;;) ; ÉèÖÃÒ»Ð©ÎÄ¼þµÄÄ¬ÈÏ´ò¿ª·½Ê½£¬´Ë¹¦ÄÜ±ØÐëÔÚ(require 'dired-x)Ö®ºó
+;;) ; ����һЩ�ļ���Ĭ�ϴ򿪷�ʽ���˹��ܱ�����(require 'dired-x)֮��
 
 ;;**********          ibuffer
 ;;(require 'ibuffer)                      
@@ -462,8 +460,6 @@ occurence of CHAR."
             (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
             (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
-(global-evil-search-highlight-persist t)
-
 ;; (require 'smex) ; Not needed if you use package.el
 ;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
 ;;                   ; when Smex is auto-initialized on its first run.
@@ -487,45 +483,3 @@ occurence of CHAR."
 ;;        (mapcar 'symbol-name zone-programs))))
 ;;     (let ((zone-programs (list (intern pgm))))
 ;;       (zone)))
-
-;; evil-args
-;; bind evil-args text objects
-;; (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-;; (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
-
-;; ;; bind evil-forward/backward-args
-;; (define-key evil-normal-state-map "L" 'evil-forward-arg)
-;; (define-key evil-normal-state-map "H" 'evil-backward-arg)
-;; (define-key evil-motion-state-map "L" 'evil-forward-arg)
-;; (define-key evil-motion-state-map "H" 'evil-backward-arg)
-
-;; ;; bind evil-jump-out-args
-;; (define-key evil-normal-state-map "K" 'evil-jump-out-args)
-
-;; evil search highlight persist
-(global-evil-search-highlight-persist t)
- 
-;; change default key bindings (if you want) HERE
-;; (setq evil-exchange-key (kbd "zx"))
-(evil-exchange-install)
-(evilem-default-keybindings "SPC")
-
-(global-evil-matchit-mode 1)
-(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
-(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
-
-
-     (unless (display-graphic-p)
-       (require 'evil-terminal-cursor-changer))
-(setq etcc--gnome-profile "Profile0")
-;;
-      (setq evil-visual-state-cursor 'box) ; █
-      (setq evil-insert-state-cursor 'bar) ; ⎸
-      (setq evil-emacs-state-cursor 'hbar) ; _
-;; (require 'popwin)
-;; (popwin-mode 1)
-
-;; (push '(direx:direx-mode :position left :width 25 :dedicated t)
-;;       popwin:special-display-config)
-;; (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
-(global-set-key (kbd "C-c p") 'magit-find-file-completing-read)

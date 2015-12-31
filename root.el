@@ -483,3 +483,4 @@ occurence of CHAR."
 ;;        (mapcar 'symbol-name zone-programs))))
 ;;     (let ((zone-programs (list (intern pgm))))
 ;;       (zone)))
+(setq initial-scratch-message "")

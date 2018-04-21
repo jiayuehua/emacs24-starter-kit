@@ -1,5 +1,5 @@
 (starter-kit-load "misc-recommended")
- (setq magit-repo-dirs "~/XiaoQiang/")
+;; (setq magit-repo-dirs "~/XiaoQiang/")
 (require 'dired)
 (window-numbering-mode 1)
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
